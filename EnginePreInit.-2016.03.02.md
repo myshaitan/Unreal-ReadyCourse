@@ -1,6 +1,6 @@
 # LaunchEngineLoop.cpp
 
-## EngineProInit() 
+## EnginePreInit() 
 ### 큰그림 : Commanline 처리, 모듈(Core, Startup)로드, 중간중간에 쓰레드 생성
 1. FPlateformMisc::SetUIFOutPut();  
 > UTF8??이걸로 세팅하는 듯(.csv 파일 읽을 때 UTF8 인코딩만(?) 먹히는 이유가 여기에 있을까??)
