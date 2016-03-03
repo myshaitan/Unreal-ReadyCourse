@@ -1,6 +1,6 @@
 #Launch.cpp
 ##EditorExit()
-###큰그림 : Editor 모드 저장, 언리얼 종료, 아직 종료되지 않은 쓰레드가 있다.(ntdll, msvcr120 인데 이건 외부 라이브러리인것 같기도 하고...)
+###큰그림 : Editor 모드 저장, 언리얼 종료, 아직 종료되지 않은 쓰레드가 있다.(ntdll-윈도우 토어 모듈, msvcr120-visual c++ 런타임 라이브러리)  
 1. GLevelEditorModeTools().SetDefaultMode();  
 > 레벨에디터 Default모드로 설정.  
 2. GLevelEditorModeTools().DeactivateAllModes();
