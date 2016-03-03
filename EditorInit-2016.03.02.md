@@ -17,4 +17,8 @@
 
 ---
 EnginePreInit() 와 다른점이라면... 음... 엔진이 생성되지 전에 세팅되어야 하는 것들은 PreInit()에 있고  
-엔진이 세팅되어야 하는 부분은 EditorInit()에 존재하는 것 같다.  
+엔진이 세팅되어야 하는 부분은 EditorInit()에 존재하는 것 같다.  \
+
+---
+EngineInit()와 EditorInit() 두개가 존재하며 Editor과 함께 실행인지 아닌지에 따라 선택된다  
+EngineInit()같은 경우는 에디터에 관련된 초기화 부분이 빠져 있으며 EngineLoop::Init()는 공통으로 실행된다.
