@@ -1,0 +1,16 @@
+#에셋의 생성 및 레퍼런싱
+####작성기간 : 2016.03.15
+---
+###에셋의 생성
+
+###에셍의 레퍼런싱(참조 : [UnrealDocs](https://docs.unrealengine.com/latest/KOR/Programming/Assets/ReferencingAssets/index.html))
+1.강 레퍼런싱 : 오브젝트A 로드시 같이 오브젝트B가 로드되는 방식
+- 직접 프로퍼티 레퍼런싱
+  - UPROPERTY()를 이용하여 블루프린터에 노출시고 에디터에서 설정한다.
+  - 블루프린터가 로드될 때 같이 로드된다.
+
+- 생성 시간 레퍼런싱
+  - 생성자에서 ConstructorHelpers::FObjectFinder 구조체 생성을 통한 레퍼런싱
+  - ConstructorHelpers 클래스는 메모리에서 에셋을 찾아본 다음, 없으면 로드합니다.
+
+2.약 레퍼런싱 : 간접 메커니즘을 통해서 오브젝트 B를 로드하는 방식
