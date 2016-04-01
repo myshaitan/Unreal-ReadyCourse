@@ -8,9 +8,16 @@
 4.CodeWork로 Android Package에 필요한 SDK, NDK, ANT, JDK 등은 설치되어 있다.
 
 ###Android Package 순서
-1.
+1.Intermediate\Build\Android .h .generated.h .bin Makefile.ubt 파일들을 만들어 낸다.
 
 2.Intermediate\Android .JAVA .xml등 NDK가 파일들을 만들어 낸다.
+
+3.Build\Android 와 Build\Receipts .target.xml 파일들이 생긴다.
+
+4.Cooking
+
+5..apk 생성, .obb 생성, .bat생성
+
 
 ###패키지 진행
 1.RunUAT BuildCookRun 명령어에 -build가 빠져있다
@@ -18,4 +25,5 @@
 - -build명령어 추가하면 Complier가 지원되지 않는 프로젝트라는 경고창이 나온다.
 - VS를 설치할 생각은 없다.
 
-2.
+2..NDK가 하는 일을 미리 하여 파일을 준다.
+- Android Package과정의 1,2,3번에 해당하는 파일 넘긴후 -build 명령어는 빼고 진행
