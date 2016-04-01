@@ -3,8 +3,11 @@
 ---
 ###패키지 환경
 1.VS는 없다.
+
 2.프로젝트는 Blueprint + C++로 구성되어있다.
+
 3.Android Package를 진행할 것이다.
+
 4.CodeWork로 Android Package에 필요한 SDK, NDK, ANT, JDK 등은 설치되어 있다.
 
 ###Android Package 순서
@@ -50,4 +53,5 @@
 -apk가 만들어 질때 NDK에서 만든 파일들이 필요로 하는데 애초에 Blueprint 프로젝트는 NDK가 필요가 없다(Unreal Documentation에 나와있음ㅋ)
 -그럼 apk파일이 만들어 질때 필요로 하는 파일을 어딘가에서 복사해 주는 과정이 있을것 같다.
 -신기한건 왜 테스트한 프로젝트에서는 그런 복사과정이 없었을까?!
+
 2.Blueprint프로젝트로 테스트를 진행해 봐야 명확해 질것같다.
