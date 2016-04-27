@@ -15,6 +15,11 @@
   - ~~_C 를 통한 로드를 사용해야 파일 로드가 된다.~~
   - 이상한건....... _C 붙일때랑 안붙일때가 확실치 않다...
   - Asset이 로드가 안되는 이유는 Cooking이 되지 않았기 때문이다.
+    - 그럼 왜 Cooking이 안되었을까????????
+    - [Asset Cooking참고](https://forums.unrealengine.com/showthread.php?60941-StaticLoad-problems-failing-to-find-file)
+    - 간단 요약 Cooking 할때 Asset의 레퍼런싱 여부를 판단하는 데 클래스 생성자의 FFindObject or FFindClass의 경우는 참
+    - 블루프린터에서의 레퍼런싱도 참
+    - 걍 Path를 가져와서 Load 명령어를 통한 로딩의 경우는 안됨(레퍼런싱 되었다고 판단하지를 않는다)
   - 패키지 할때 Content안의 모든 파일을 Cooking하게끔 설정하면 Asset 로딩에 있어 문제가 없는듯 하다.
 
 3. OpenLevel 할때 ~~경로를 풀경로로 잡아준다.(.파일명 까지 적어라!@!!!!!!!!)~~ 
