@@ -13,15 +13,16 @@ A클래스를 만들고 B클래스로 만들어진 .uasset의 Detail_Panel에서
 
 ##2단계 : (기초) Slate를 이용하여 간단한 Widget 만들기
 1. SCompundWidget를 상속받은 C클래스 만들기
-> SLATE_BEGIN_ARGS(C클래스)
->  : ..
->  , ..
-> {}
-> SLATE_ARGUMENT(타입, 변수명)
-> SLATE_END_ARGS()
->
-> void Construct(const FArguments& InArgs);
-2. Construct 함수 안에서 UI의 틀을 만들어 낼수 있다.
+  > SLATE_BEGIN_ARGS(C클래스)  
+  >  : ..  
+  >  , ..  
+  >  {}  
+  >  SLATE_ARGUMENT(타입, 변수명)  
+  >  SLATE_END_ARGS()  
+  >  
+  >  void Construct(const FArguments& InArgs);  
+
+2. Construct 함수 안에서 Slate의 틀(모양)을 만들어 낼수 있다.
 
 ##3단계 : (본격개발) Detail_Panel에 이벤트 등록
 1. PropertyEditorModule 가 Detail_Panel에 등록되는 Slate?? 구성품?? 들을 가지고 있다
