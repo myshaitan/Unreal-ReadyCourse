@@ -1,5 +1,5 @@
 #MoviePlayer을 이용해서 Loading Screen 만들기
-####작성기간 : 2016.05.09
+####작성기간 : 2016.05.09 - 
 ###목표 : 로딩스크린을 만든다. 스크린에는 ProgressBar가 존재하며 로딩 상태를 Percentage로 나타낸다.
 
 ###MoviePlayer이란??
