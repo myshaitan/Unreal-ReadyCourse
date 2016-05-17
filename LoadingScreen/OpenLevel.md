@@ -46,7 +46,7 @@
   - FWorldDelegates::OnPreWorldInitializeation.Broadcast();
      > (check : 여기에 이벤트 하나 등록하자.)
     
-  - FWorldDelegates::OnPostWorldInitialization.Broadcast();
+  - FWorldDelegates::OnPostWorldInitialization.Broadcast();  
      > (check : 여기에 이벤트 하나 등록하자.)
     
   - BroadcastLevelsChanged();
@@ -59,6 +59,5 @@
 14. GamePlay를 위한 초기화
 15. 네비 초기화
 16. 여러가지 생성 초기화 등등
-17. FCoreUObjectDelegates::PostLoadMap.Broadcast();
+17. FCoreUObjectDelegates::PostLoadMap.Broadcast();  
   > (check : 여기에 이벤트 하나 등록하자.)
-  
