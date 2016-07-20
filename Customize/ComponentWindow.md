@@ -16,9 +16,10 @@
 ##### 개발과정
 1. 에디터에서 컴포넌트 추가 버튼으로 Component를 생성할 때 어떤 과정이 일어날까??
 - 키 입력 이벤트 -> DropDownMenu에서 키 입력 처리 -> 델리게이트로 묶인 함수 호출 -> 그 중 SComponentClassCombo의 OnAddComponentSelectionChanged 호출 -> OnAddComponentSelectionChanged함수안에서 OnComponentClassSelected에 묶인 함수들 호출 -> 그 중 SSCEditor에 있는 PerformComboAddClass 함수 호출 -> SSCEditor::AddNewComponent() 호출, 이 함수에서 노드에 추가되는 부분이 존재한다.
-2. SSCEditor은
+2. SSCEditor을 가져온다.
+- 위에서 CustomizeDetails을 통해서 버튼을 생성했듯이 CustomizeDetails에서 DetailBuilder에서 SSEditor을 가져 올수 있는지 확인
 3. SSCEditor::PerformComboAddClass() 함수를 호출시키겠다.
-3. SSC
+3. 끝
 
 ##### SSCSEditor 클래스
 1. 이 클래스가 직접적으로 Component들을 만들어 내고 Node에 추가하는 작업까지 한다.
