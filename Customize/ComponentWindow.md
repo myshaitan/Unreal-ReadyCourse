@@ -30,6 +30,11 @@
   > SSCSEditor을 가져온다.  
   > FBlueprinteditor 클래스를 통해서 SSCSEditor을 가져올수 있다.  
   > FBlueprinteditor은 어떻게??  
+  > FBlueprinteditor은 OpenAssetEditor()에서 생성된다. 즉, 에셋을 열어 에디터 창을 띄울때 생성한다.
+  > FBlueprinteditor가 생성될때 SCSEditorCustomizations에 있는 것들을 FBlueprinteditor쪽에 등록하는게 있는데 이걸로 접근할수 있을듯
+  > TMap<FName, FSCSEditorCustomizationBuilder> SCSEditorCustomizations 요거다
+  > 즉, FSCSEditorCustomizationBuilder를 만들어서 SCSEditorCustomizations에 등록하면 BlueprintEditor창이 오픈할때 이벤트를 받을수 있다.
+  >
 
 3. SSCSEditor::PerformComboAddClass() 함수를 호출시키겠다.
 4. 끝
