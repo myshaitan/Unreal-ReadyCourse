@@ -1,5 +1,5 @@
 # 동적 추가된 Component를 ComponentWindow에 추가하기
-#### 작성기간 : 2016.07.13 - 
+#### 작성기간 : 2016.07.13 - 2016.07.26
 ---
 ## 목적 : 에디터에서 AddComponent를 사용하여 컴포넌트를 만들면 될 것인데 왜 이렇게 할까?? 음... 구지 이렇게 할 필요는 없겠다 그래도 연구용으로 작성해보자.
 
@@ -45,10 +45,17 @@
   > 여기에 등록하기 위해서는 makeinstance(TWeakPtr<FBlueprintEditor> BlueprintEditor) 형식으로 함수를 구성하고 등록하면 된다.
   > 이렇게 등록을 하면 어떤 에셋을 편집하기 위해 편집창을 열면 PropertyView에 커스텀마이즈한 클래스가 등록이 되고 편집창에서 Detail창이 열릴 때 커스텀마이즈한 클래스에서 CustomizeDatail() 함수가 호출되면서 우리가 커스텀마이즈한 Slate구조가 형성된다.  
 
-3. SSCSEditor::PerformComboAddClass() 함수를 호출시키겠다.
+3. BlueprintEditor을 통해서 SSCSEditor 변수를 가져오고 이 SSCSEditor을 통해서 AddNewNodeForInstancedComponent()함수를 호출시키겠다.
+  - AddNewNode() 요거랑은 차이가 있다.
+  - AddNewNode() : 블루프린터에서 만든 Node에 새 Node를 부착할 때
+  - AddNewNodeForInstancedComponent() : Component형의 모든 Node들을 상대로 새 Node를 부착할 때
+
 4. 끝
 
 ##### SSCSEditor 클래스
 1. 이 클래스가 직접적으로 Component들을 만들어 내고 Node에 추가하는 작업까지 한다.
 2. 이 클래스는 어디에서 왔을까???
-  - 
+3. 
+
+---
+나만 알아볼수 있게 암호화된 페이지인듯 ㅠㅠ
