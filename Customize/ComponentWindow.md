@@ -19,7 +19,7 @@
 2. SSCSEditor을 가져온다.
 - 위에서 CustomizeDetails을 통해서 버튼을 생성했듯이 CustomizeDetails에서 DetailBuilder에서 SSEditor을 가져 올수 있는지 확인
   > DetailBuilder에서 가져오기  
-  > 실패
+  > 실패  
 
 - KismetEditorUtilities::AddComponentToBlueprint() 이용
   > 가능은 하지만 GetRootNode()에서 RootNode를 블루프린터편집창에서 생성한 Component 중에서 최상단 Node를 루트로 잡는다.  
@@ -30,11 +30,14 @@
   > SSCSEditor을 가져온다.  
   > FBlueprinteditor 클래스를 통해서 SSCSEditor을 가져올수 있다.  
   > FBlueprinteditor은 어떻게??  
-  > FBlueprinteditor은 OpenAssetEditor()에서 생성된다. 즉, 에셋을 열어 에디터 창을 띄울때 생성한다.
-  > FBlueprinteditor가 생성될때 SCSEditorCustomizations에 있는 것들을 FBlueprinteditor쪽에 등록하는게 있는데 이걸로 접근할수 있을듯
-  > TMap<FName, FSCSEditorCustomizationBuilder> SCSEditorCustomizations 요거다
-  > 즉, FSCSEditorCustomizationBuilder를 만들어서 SCSEditorCustomizations에 등록하면 BlueprintEditor창이 오픈할때 이벤트를 받을수 있다.
-  >
+  > FBlueprinteditor은 OpenAssetEditor()에서 생성된다. 즉, 에셋을 열어 에디터 창을 띄울때 생성한다.  
+  > FBlueprinteditor가 생성될때 SCSEditorCustomizations에 있는 것들을 FBlueprinteditor쪽에 등록하는게 있는데 이걸로 접근할수 있을듯  
+  > TMap<FName, FSCSEditorCustomizationBuilder> SCSEditorCustomizations 요거다  
+  > 즉, FSCSEditorCustomizationBuilder를 만들어서 SCSEditorCustomizations에 등록하면 BlueprintEditor창이 오픈할때 이벤트를 받을수 있다.  
+  > 음... 이벤트에 의해 MakeInstance()함수가 호출되면 그 반환값이 Builder에 등록되는데  
+  > FSCSEditorCustomizationBuilder과 FOnGetDetailCustomizationInstance 쪽과 다르므로 우리가 사용해야할 DetailPanel에서 SSCSEditor을 사용하려면 FSCSEditorCustomizationBuilder에서 등록해놓은 객체를 통해서 SSCSEditor을 가져와야하는 번거로움이 존재한다.  
+
+- 
 
 3. SSCSEditor::PerformComboAddClass() 함수를 호출시키겠다.
 4. 끝
