@@ -37,7 +37,13 @@
   > 음... 이벤트에 의해 MakeInstance()함수가 호출되면 그 반환값이 Builder에 등록되는데  
   > FSCSEditorCustomizationBuilder과 FOnGetDetailCustomizationInstance 쪽과 다르므로 우리가 사용해야할 DetailPanel에서 SSCSEditor을 사용하려면 FSCSEditorCustomizationBuilder에서 등록해놓은 객체를 통해서 SSCSEditor을 가져와야하는 번거로움이 존재한다.  
 
-- 
+- 그렇다면 번거로움을 쫌더 개선할수 있는 방법이 없을까??
+  > FSCSEditorSustomizationBuilder에 등록되어 이벤트가 호출되면 BlueprintEditor 객체를 인자값으로 받을 수있는데 이 BlueprintEditor에는  
+  > Inspector라는 SKismetInspector 타입의 변수가 존재한다.  
+  > 이 SKismetInspector 클래스가 하는 일은 BlueprintEditor의 Slate구조를 형성?가지고? 있는 데 클래스의 변수중 DetailsView 타입의 PropertyView가 존재한다.  
+  > PropertyView에는 DetailCustomize를 위해 DetailCustomize 클래스를 등록시킬수 있다(첨에 버튼 만든 것 처럼)  
+  > 여기에 등록하기 위해서는 makeinstance(TWeakPtr<FBlueprintEditor> BlueprintEditor) 형식으로 함수를 구성하고 등록하면 된다.
+  > 이렇게 등록을 하면 어떤 에셋을 편집하기 위해 편집창을 열면 PropertyView에 커스텀마이즈한 클래스가 등록이 되고 편집창에서 Detail창이 열릴 때 커스텀마이즈한 클래스에서 CustomizeDatail() 함수가 호출되면서 우리가 커스텀마이즈한 Slate구조가 형성된다.  
 
 3. SSCSEditor::PerformComboAddClass() 함수를 호출시키겠다.
 4. 끝
